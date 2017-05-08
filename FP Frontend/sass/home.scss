@@ -1,0 +1,52 @@
+#location {
+    margin-left: 18%;
+    display: inline;
+    margin-right: 10px;
+    width: 38%;
+}
+
+
+
+.leftColumn {
+	display:inline-block;
+	margin-top: 15px;
+
+}
+#PM2{
+    margin-bottom: 24px;
+}
+
+#NO2{
+    margin-bottom: 25px;
+}
+.rightColumn{
+	display:inline-block;
+}
+
+.pollutants {
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    margin: 10px;
+    background: linear-gradient(rgb(79,183,76),rgb(79,281,76));
+    border-radius: 5%;
+    li {
+        list-style-type: none;
+        display: block;
+    }
+}
+.overall{
+	display:inline-block;
+	vertical-align: top;
+	margin-top: 70px;
+}
+
+.values{
+	margin-left: 17%;
+}
+
+#saveLocation {
+    display: block;
+    margin-top: 75px;
+    margin-left: 205px;
+}

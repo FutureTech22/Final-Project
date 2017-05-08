@@ -1,0 +1,16 @@
+#descriptionInput {
+  height: 300px; }
+
+.blogInputsClass {
+  margin: 0px auto;
+  margin-top: 10px;
+  width: 400px; }
+
+#titleInput {
+  margin-bottom: 25px;
+  margin-top: 50px; }
+
+#blogSubmit {
+  margin-left: 61%;
+  margin-top: 10px;
+  margin-bottom: 50px; }

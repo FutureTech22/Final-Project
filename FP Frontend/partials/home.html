@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<div class='container'>
+    <main>
+        <form>
+            <input id='location' placeholder='Enter Location'>
+            <button id='locationSubmit'>Submit</button>
+            <button id='saveLocation'>Save This Location</button>
+        </form>
+        <div class='values'>
+            <div class='leftColumn'>
+                <div id='PM2' class='pollutants'>
+                    <ul>
+                        <li>PM2.5</li>
+                        <li>{{vm.data.pollutants.pm25.units}}</li>
+                        <li>{{vm.data.pollutants.pm25.concentration}}</li>
+                    </ul>
+                </div>
+                <div id='PM10' class='pollutants'>
+                    <ul>
+                        <li>PM10</li>
+                        <li>{{vm.data.pollutants.pm10.units}}</li>
+                        <li>{{vm.data.pollutants.pm10.concentration}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='rightColumn'>
+                <div id='NO2' class='pollutants'>
+                    <ul>
+                        <li>NO2</li>
+                        <li>{{vm.data.pollutants.no2.units}}</li>
+                        <li>{{vm.data.pollutants.no2.concentration}}</li>
+                    </ul>
+                </div>
+                <div id='CO2' class='pollutants'>
+                    <ul>
+                        <li>C02</li>
+                        <li>{{vm.data.pollutants.co.units}}</li>
+                        <li>{{vm.data.pollutants.co.concentration}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='overall'>
+                <div id='GHG' class='pollutants'>
+                    <ul>
+                        <li>AQI</li>
+                        <li>{{vm.data.breezometer_aqi}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
