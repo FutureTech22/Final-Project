@@ -8,7 +8,7 @@ input {
 }
 
 header {
-    background-color: black;
+   
     border-bottom: 2px solid black;
     color:rgb(79,183,76);
     height: 75px;
@@ -64,6 +64,10 @@ header {
         margin-top: 10px;
 
     }
+}
+
+#aqiImage.image {
+    margin-left: 27%;
 }
 
 

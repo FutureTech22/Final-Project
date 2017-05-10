@@ -22,8 +22,9 @@
   height: 100px;
   width: 200px;
   margin: 10px;
-  background: linear-gradient(#4fb74c, #4fff4c);
   border-radius: 5%; }
+  .pollutants ul {
+    position: absolute; }
   .pollutants li {
     list-style-type: none;
     display: block; }

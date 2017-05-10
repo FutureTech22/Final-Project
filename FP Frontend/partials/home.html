@@ -2,11 +2,11 @@
 <link rel="stylesheet" type="text/css" href="css/home.css">
 <div class='container'>
     <main>
-        <form>
-            <input id='location' placeholder='Enter Location'>
-            <button id='locationSubmit'>Submit</button>
-            <button id='saveLocation'>Save This Location</button>
+        <form ng-submit='vm.setLocation()'>
+            <input id='mapLocation' placeholder='Enter Location' ng-model="vm.location">
+            <button id='mapLocationSubmit'>Submit</button>
         </form>
+        <button id='saveLocation'>Save This Location</button>
         <div class='values'>
             <div class='leftColumn'>
                 <div id='PM2' class='pollutants'>

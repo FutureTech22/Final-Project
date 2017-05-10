@@ -4,14 +4,14 @@
     angular
         .module('routing')
         .factory('API', function($http) {
-
+            const vm = this
 
             return {
 
-                getData: (lat,long) => {
+                getData: (lat, long) => {
                     let data = {
                         lat: lat,
-                        long: long,
+                        long: long
                     }
                     return $http({
                         method: 'POST',

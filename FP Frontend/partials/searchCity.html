@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="css/searchCity.css">
+<div class='container'>
+    <form ng-submit='vm.setLocation()'>
+        <input id='mapLocation' placeholder='Enter Location' ng-model="vm.location">
+        <button id='mapLocationSubmit'>Submit</button>
+         <button id='saveLocation'>Save This Location</button>
+    </form>
+    <div class='col-md-6'>
+        <div class="image">
+            <a ui-sref='info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+            <ul id='pm25'>
+                <li>PM2.5</li>
+                <li>{{vm.data.pollutants.pm25.units}}</li>
+                <li>{{vm.data.pollutants.pm25.concentration}}</li>
+            </ul>
+        </div>
+        <div class="image">
+            <a ui-sref='info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+            <ul id='pm10'>
+                <li>PM10</li>
+                <li>{{vm.data.pollutants.pm25.units}}</li>
+                <li>{{vm.data.pollutants.pm25.concentration}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class='col-md-6'>
+        <div class="image">
+            <a ui-sref='info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+            <ul id='co'>
+                <li>CO</li>
+                <li>{{vm.data.pollutants.pm25.units}}</li>
+                <li>{{vm.data.pollutants.pm25.concentration}}</li>
+            </ul>
+        </div>
+        <div class="image">
+            <a ui-sref='info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+            <ul id='no2'>
+                <li>NO2</li>
+                <li>{{vm.data.pollutants.pm25.units}}</li>
+                <li>{{vm.data.pollutants.pm25.concentration}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class='col-md-12 row'>
+	    <div class="image" id='aqiImage'>
+	        <a ui-sref='info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+	        <ul id='aqi'>
+	            <li>AQI</li>
+	            <li>{{vm.data.breezometer_aqi}}</li>
+	        </ul>
+	    </div>
+	</div>
+</div>
+

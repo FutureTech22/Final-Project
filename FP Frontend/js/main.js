@@ -23,7 +23,7 @@
                     views: {
                         'content': {
                             templateUrl: '../partials/map.html',
-                            controller:'locationController',
+                            controller:'mapController',
                             controllerAs: "vm",
                             
                         },
@@ -68,6 +68,17 @@
                         'content': {
                             templateUrl: '../partials/userLogin.html',
                             controller:'mainController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+             $stateProvider
+                .state('searchCity', {
+                    url: '/searchCity',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/searchCity.html',
+                            controller:'pollutantController',
                             controllerAs:"vm",
                         },
                     }

@@ -7,10 +7,7 @@
                 const vm = this;
 
 
-                let data = API.getData();
-                data.then(res => {
-                    console.log(res);
-                })
+                
 
                 vm.createUser = (valid) => {
                     alert("TSET");

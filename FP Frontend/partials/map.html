@@ -3,7 +3,7 @@
 <input id='mapLocation' placeholder='Enter Location' ng-model="vm.location">
 <button id='mapLocationSubmit'>Submit</button>
 </form>
-<div ng-repeat="city in vm.city.results">
+<div ng-repeat="city in vm.city">
 <p>{{city.geometry.location.lat}}</p>
 <p>{{city.geometry.location.lng}}</p>
 </div>

@@ -1,4 +1,4 @@
-(function() {
+ (function() {
 'use strict';
 
 angular
@@ -6,20 +6,26 @@ angular
     .controller('pollutantController', function(API) {
             const vm = this
 
-            localStorage.setItem('lat', 39.1031);
-            localStorage.setItem('long', -84.5120);
 
+             vm.setLocation = function(){
+                
+            let locationData = API.getLocation(vm.location);
 
-            vm.lat = localStorage.getItem('lat');
-            vm.long = localStorage.getItem('long');
-            console.log(vm.lat, vm.long);
+            locationData.then(res => {
+            vm.city = res.data.results;
 
-            let pollutionData = API.getData(vm.lat,vm.long);
+                console.log("CITY", vm.city['0']);
 
-            pollutionData.then(res => {
-                vm.data = res.data;
-                console.log(vm.data);
-            })
+                
+                let pollutionData = API.getData(vm.city['0'].geometry.location.lat,vm.city['0'].geometry.location.lng);
+
+                pollutionData.then(res => {
+                    vm.data = res.data;
+                    console.log(vm.data);
+                })
+                
+                })
+            }
 
         })
 })();

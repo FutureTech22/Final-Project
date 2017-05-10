@@ -6,7 +6,6 @@ input {
   margin-top: 50px; }
 
 header {
-  background-color: black;
   border-bottom: 2px solid black;
   color: #4fb74c;
   height: 75px; }
@@ -47,3 +46,6 @@ nav {
 header #title {
   display: inline;
   margin-top: 10px; }
+
+#aqiImage.image {
+  margin-left: 27%; }

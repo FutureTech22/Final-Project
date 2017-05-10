@@ -22,14 +22,15 @@
 .rightColumn{
 	display:inline-block;
 }
-
 .pollutants {
     border: 2px solid black;
     height: 100px;
     width: 200px;
     margin: 10px;
-    background: linear-gradient(rgb(79,183,76),rgb(79,281,76));
     border-radius: 5%;
+    ul{
+        position:absolute;
+    }
     li {
         list-style-type: none;
         display: block;
