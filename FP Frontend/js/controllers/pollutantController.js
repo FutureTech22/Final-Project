@@ -8,7 +8,7 @@ angular
 
 
              vm.setLocation = function(){
-                
+            
             let locationData = API.getLocation(vm.location);
 
             locationData.then(res => {
@@ -25,7 +25,21 @@ angular
                 })
                 
                 })
-            }
+            
 
-        })
+                            var uluru = {
+                                lat: vm.city['0'].geometry.location.lat,
+                                lng: vm.city['0'].geometry.location.lng
+                            };
+
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 4,
+                                center: uluru
+                            });
+                            var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                            });
+                        }
+                    })
 })();

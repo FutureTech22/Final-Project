@@ -9,5 +9,15 @@
     </form>
 
     <p>User: {{vm.user.name}} {{vm.user.password}}</p>
-    
+
 </main>
+
+<form action="/auth/openid" method="post">
+    <div>
+        <label>OpenID:</label>
+        <input type="text" name="openid_identifier"/><br/>
+    </div>
+    <div>
+        <input type="submit" value="Sign In"/>
+    </div>
+</form>

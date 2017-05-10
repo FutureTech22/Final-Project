@@ -30,17 +30,6 @@
                     }
                 })
             $stateProvider
-                .state('info', {
-                    url: '/info',
-                    views: {
-                        'content': {
-                            templateUrl: '../partials/information.html',
-                            controller:'pollutantController',
-                            controllerAs:"vm",
-                        },
-                    }
-                })
-            $stateProvider
                 .state('blog', {
                     url: '/blog',
                     views: {
@@ -72,7 +61,7 @@
                         },
                     }
                 })
-             $stateProvider
+            $stateProvider
                 .state('searchCity', {
                     url: '/searchCity',
                     views: {
@@ -83,6 +72,74 @@
                         },
                     }
                 })
+             $stateProvider
+                .state('coInfo', {
+                    url: '/coInfo',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/coInfo.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+            $stateProvider
+                .state('no2Info', {
+                    url: '/no2Info',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/no2Info.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+            $stateProvider
+                .state('pm10Info', {
+                    url: '/pm10Info',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/pm10Info.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+            $stateProvider
+                .state('pm25Info', {
+                    url: '/pm25Info',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/pm25Info.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+             $stateProvider
+                .state('ozoneInfo', {
+                    url: '/ozoneInfo',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/ozoneInfo.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+            $stateProvider
+                .state('aqiInfo', {
+                    url: '/aqiInfo',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/pollutants/aqiInfo.html',
+                            controller:'pollutantController',
+                            controllerAs:"vm",
+                        },
+                    }
+                })
+
+
 
         })
 })();
