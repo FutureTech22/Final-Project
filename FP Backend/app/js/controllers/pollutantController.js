@@ -6,12 +6,6 @@ angular
     .controller('pollutantController', function(API,$state,$auth) {
             const vm = this
 
-            if($auth.isAuthenticated()){
-                $state.go('home')
-             }else{
-                    $state.go('userLogin')
-             }
-            
 
              vm.setLocation = function(){
             

@@ -23,21 +23,21 @@
                     return $http({
                         method: 'POST',
                         data: user,
-                        url: 'http://localhost:8080/user',
+                        url: 'http://localhost:3000/user',
                     })
 
                 },
                 getUser: () => {
                     return $http({
                         method: 'GET',
-                        url: 'http://localhost:8080/user',
+                        url: 'http://localhost:3000/user',
                     })
                 },
                 getUserData: () => {
                     return $http({
                         method: 'GET',
                         data: data,
-                        url: 'http://localhost:8080/user',
+                        url: 'http://localhost:3000/user',
 
                     })
                 },
@@ -45,7 +45,10 @@
                     return $http({
                         method: 'GET',
                         data: city,
-                        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyCbXl9j-Qy2dZNe2-a3lm2E80Aj7VdUGX8`,
+                        headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            },
+                        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyCTuDSmrBrHXYIeGiDx_wNp7TbB7wL8GH8`,
 
                     })
                 },

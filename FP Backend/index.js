@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 8080;
-const cors = require('cors');
+const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const jwt = require('jwt-simple');
@@ -12,15 +11,23 @@ const moment = require('moment');
 mongoose.connect('mongodb://brettsdb:12345@ds133261.mlab.com:33261/final_project_user_database');
 
 
-app.use(cors());
 app.use(express.static('app'))
 app.use(express.static('public'));
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: true })); 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 
 app.get('/',(req,res)=>{
+  req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.sendFile(path.resolve(__dirname,'./app/index.html'));
 })
 
