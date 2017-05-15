@@ -1,9 +1,24 @@
-<div class='container'>
-    <div class='blogInputs'>
-        <link rel="stylesheet" type="text/css" href="css/blog.css">
-        <input class='blogInputsClass' id='titleInput' placeholder='Title'>
-        <input class='blogInputsClass' id='descriptionInput' placeholder='Description'>
-        <input class='blogInputsClass' id='urlInput' placeholder='URL'>
-        <button id='blogSubmit'>Submit</button>
-    </div>
-</div>
+<link rel="stylesheet" type="text/css" href="css/blog.css">
+
+<body ng-controller='blogController as vm'>
+    <div class='container'>
+        <table class="table" ng-class="vm.table">
+            <thead>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in vm.data">
+                    <td>{{data.title}}</td>
+                    <td>{{data.description}}</td>
+                    <td>{{data.url}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <main>
+            <form name='blogDetails' ng-submit='vm.createBlog(blogDetails.$valid)'>
+               
+                <input type='text' ng-model='vm.blog.title' placeholder='Title' required>
+                <input type='text' ng-model='vm.blog.description' placeholder='Description' required> 
+                <input type="text" ng-model='vm.blog.url' placeholder='url'>
+                <button>Submit</button>
+            </form>
+             <p> {{vm.blog.title}},{{vm.blog.description}} </p>

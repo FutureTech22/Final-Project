@@ -10,7 +10,6 @@ input {
 header {
    
     border-bottom: 2px solid lightseagreen;
-    color: lightskyblue;
     height: 75px;
     #title{
         background: white;
@@ -22,6 +21,7 @@ header {
 
 h1 {
     margin: 0px auto;
+    font-family: 'Barrio', cursive;
 }
 
 footer{
@@ -66,6 +66,14 @@ header {
     }
 }
 
+main.background.ngscope {
+     background-image: url('http://nocamels.com/wp-content/uploads/2016/12/breezometer-logo.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 1000px;
+     width:100%;
+}
 
 
 

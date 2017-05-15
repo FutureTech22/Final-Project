@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const Blog = require('./models/blog');
 const jwt = require('jwt-simple');
 const path = require('path');
 const request = require('request');
@@ -14,40 +15,38 @@ mongoose.connect('mongodb://brettsdb:12345@ds133261.mlab.com:33261/final_project
 app.use(express.static('app'))
 app.use(express.static('public'));
 app.use(bodyParser.json());  
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Headers', 'Authorization,accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
 });
 
 
 
-app.get('/',(req,res)=>{
-  req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.get('/home',(req,res)=>{
 	res.sendFile(path.resolve(__dirname,'./app/index.html'));
-})
+});
 
 
-// Get all the users
-app.get('/user',(req,res)=>{
-	User.find().exec((err,response)=>{
+
+// Get all the blogs
+app.get('/blog',(req,res)=>{
+	Blog.find().exec((err,response)=>{
 		if(err) return res.json(err);
 		res.json(response);
 	})
 })
 
-// Post a new users
-app.post('/user',function(req,res){
-	let newUser= new User();
-		newUser.name = req.body.name;
-		newUser.password = req.body.password;
-		newUser.save(err=>{
+// Post a new blog
+app.post('/blog',function(req,res){
+	let newBlog = new Blog();
+		newBlog.title = req.body.title;
+		newBlog.description = req.body.description;
+    newBlog.url = req.body.url;
+		newBlog.save(err=>{
 		    if(err) return res.json({err});
-		    User.find().exec((err,response)=>{
+		    Blog.find().exec((err,response)=>{
 		      if(err) res.json({err});
 		      res.json(response);
 		    });

@@ -48,6 +48,8 @@
                     views: {
                         'content': {
                             templateUrl: '../partials/blog.html',
+                            controller: 'blogController',
+                            controllerAs: "vm",
 
                         },
                     }
