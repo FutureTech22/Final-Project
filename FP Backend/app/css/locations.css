@@ -16,7 +16,6 @@
   height: 100px;
   width: 200px;
   margin: 10px;
-  background: linear-gradient(#4fb74c, #4fff4c);
   border-radius: 8%; }
   .pollutants li {
     list-style-type: none;
@@ -31,7 +30,6 @@
   margin-left: 17%; }
 
 .cities div {
-  background: linear-gradient(#4fb74c, #4fff4c);
   width: 200px;
   height: 75px;
   border: 2px solid black;
@@ -46,3 +44,15 @@
 
 #NO2 {
   margin-bottom: 24px; }
+
+li#faveLocations {
+  border: 2px solid lightseagreen;
+  height: 100px;
+  width: 25%;
+  margin: 40px;
+  margin-left: 25%;
+  border-radius: 8%;
+  list-style-type: none; }
+
+li p {
+  margin-left: 10%; }

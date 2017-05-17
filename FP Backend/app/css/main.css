@@ -30,7 +30,8 @@ nav {
   padding-top: 34px;
   font-size: 18px; }
   nav ul {
-    display: inline; }
+    display: inline;
+    font-family: 'Indie Flower', cursive; }
     nav ul li {
       display: inline;
       background: white;
@@ -40,8 +41,9 @@ nav {
       padding-bottom: 1px;
       padding-top: 1px;
       border-radius: 5%; }
-      nav ul li a {
-        color: lightskyblue; }
+      nav ul li a.links {
+        color: black;
+        text-decoration: none; }
 
 header #title {
   display: inline;

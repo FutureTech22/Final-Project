@@ -6,10 +6,7 @@
   "scripts": {
     "test": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johncpatterson/TIY-6-4-To-Do-List-Angular.git"
-  },
+ 
   "author": "Jake Boyles",
   "license": "ISC",
   "devDependencies": {

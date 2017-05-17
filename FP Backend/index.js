@@ -5,6 +5,7 @@ const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const Blog = require('./models/blog');
+const Location = require('./models/location');
 const jwt = require('jwt-simple');
 const path = require('path');
 const request = require('request');
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Authorization,accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+  next();
 });
 
 
@@ -52,6 +54,51 @@ app.post('/blog',function(req,res){
 		    });
 		});
 });
+
+// Get the location
+app.get('/location',(req,res)=>{
+  Location.find().exec((err,response)=>{
+    if(err) return res.json(err);
+    res.json(response);
+  })
+})
+
+
+//Get user
+app.post('/user', (req,res)=>{
+  const user = User.findOne({_id:req.body.user},(err,user)=>{
+    if(err) res.json({err});
+    res.json(user);
+  });
+});
+
+// Get a single person
+app.get('/users/:id',function(req,res){
+  let id = req.params.id;
+  const single = data.filter(singleData => {
+    if(singleData.id == id ) {
+      return true;
+    }
+  })
+  res.json(single);
+}),
+
+
+//updating locations
+app.post('/addLocation', function(req,res){
+  let location = req.body.location;
+  let id = req.body.id;
+  const user = User.findOne({_id:id},((err,user)=>{
+    user.locations.push(location);
+    user.save(err=>{
+      if(err) return res.json({err});
+        User.find().exec((err,response)=>{
+          if(err) res.json({err});
+          res.json(response);
+      });
+  });
+  }))
+})
 
 function createJWT(user) {
  var payload = {

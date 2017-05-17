@@ -19,7 +19,8 @@ var userSchema = new mongoose.Schema({
  yahoo: String,
  twitter: String,
  twitch: String,
- spotify: String
+ spotify: String,
+ locations: Array,
 });
 
 userSchema.pre('save', function(next) {

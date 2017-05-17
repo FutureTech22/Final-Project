@@ -24,24 +24,22 @@
                     views: {
                         'content': {
                             templateUrl: '../partials/home.html',
-                            controller: 'pollutantController',
-                            controllerAs: "vm",
+                           
 
                         },
                     }
                 })
             $stateProvider
-                .state('map', {
-                    url: '/map',
+                .state('searchCity', {
+                    url: '/searchCity',
                     views: {
                         'content': {
-                            templateUrl: '../partials/map.html',
-                            controller: 'mapController',
+                            templateUrl: '../partials/searchCity.html',
+                            controller: 'pollutantController',
                             controllerAs: "vm",
-
                         },
                     }
-                })
+                })    
             $stateProvider
                 .state('blog', {
                     url: '/blog',
@@ -60,7 +58,7 @@
                     views: {
                         'content': {
                             templateUrl: '../partials/locations.html',
-                            controller: 'pollutantController',
+                            controller: 'locationController',
                             controllerAs: "vm",
                         },
                     }
@@ -72,17 +70,6 @@
                         'content': {
                             templateUrl: '../partials/userLogin.html',
                             controller: 'loginController',
-                            controllerAs: "vm",
-                        },
-                    }
-                })
-            $stateProvider
-                .state('searchCity', {
-                    url: '/searchCity',
-                    views: {
-                        'content': {
-                            templateUrl: '../partials/searchCity.html',
-                            controller: 'pollutantController',
                             controllerAs: "vm",
                         },
                     }

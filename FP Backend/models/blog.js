@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var userSchema = new mongoose.Schema({
+var blogSchema = new mongoose.Schema({
 
 	title: {
      required: [true, "Please provide name"],
@@ -22,4 +22,4 @@ var userSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('blog', blogSchema);

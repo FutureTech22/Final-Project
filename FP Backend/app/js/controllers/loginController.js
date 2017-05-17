@@ -13,6 +13,11 @@
                 $auth.authenticate(provider);
             };
 
+            let getNewUser = API.getUser();
+                getNewUser.then(res => { 
+                    console.log("Heres your data", res);
+            	        vm.data = res.data 
+                        })
 
 
         });

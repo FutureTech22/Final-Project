@@ -2,62 +2,61 @@
 <link rel="stylesheet" type="text/css" href="css/home2.css">
 <div class='container animated fadeInUpBig'>
     <div class='col-md-6'>
-        <form ng-submit='vm.setLocation()'>
+        <form>
+        <!-- when you enter location make that input value go to the button then add vm.data.pollutants in the display after the button is clicked(also have it route to the  my locations -->
             <input id='mapLocation' placeholder='Enter Location' ng-model="vm.location">
-            <button id='mapLocationSubmit'>Submit</button>
+            <button ng-click="vm.setLocation()" id='mapLocationSubmit'>Submit</button>
         </form>
 
-
-        <form ng-submit='vm.saveLocation()'>
-            <button id='saveLocation'>Save This Location</button>
-        </form>
-
-
-
-        
-        <div class='col-md-6'>
-            <div class="image">
-                <a ui-sref='pm25Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
-                <ul id='pm25'>
-                    <li>PM2.5</li>
-                    <li>{{vm.data.pollutants.pm25.units}}</li>
-                    <li>{{vm.data.pollutants.pm25.concentration}}</li>
-                </ul>
+        <button ui-sref='locations' ng-click="vm.saveLocation()" id='saveThisLocation'>Save This Location</button>
+<!-- make the save location button a form? -->
+      
+    
+       <div class='pollutantsValues'>
+            <div class='col-md-6'>
+                <div class="image">
+                    <a ui-sref='pm25Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul id='pm25'>
+                        <li>PM2.5</li>
+                        <li>{{vm.data.pollutants.pm25.units}}</li>
+                        <li>{{vm.data.pollutants.pm25.concentration}}</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <a ui-sref='pm10Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul id='pm10'>
+                        <li>PM10</li>
+                        <li>{{vm.data.pollutants.pm10.units}}</li>
+                        <li>{{vm.data.pollutants.pm10.concentration}}</li>
+                    </ul>
+                </div>
             </div>
-            <div class="image">
-                <a ui-sref='pm10Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
-                <ul id='pm10'>
-                    <li>PM10</li>
-                    <li>{{vm.data.pollutants.pm10.units}}</li>
-                    <li>{{vm.data.pollutants.pm10.concentration}}</li>
-                </ul>
+            <div class='col-md-6'>
+                <div class="image">
+                    <a ui-sref='coInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul id='co'>
+                        <li>CO</li>
+                        <li>{{vm.data.pollutants.co.units}}</li>
+                        <li>{{vm.data.pollutants.co.concentration}}</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <a ui-sref='no2Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul id='no2'>
+                        <li>NO2</li>
+                        <li>{{vm.data.pollutants.no2.units}}</li>
+                        <li>{{vm.data.pollutants.no2.concentration}}</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class='col-md-6'>
-            <div class="image">
-                <a ui-sref='coInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
-                <ul id='co'>
-                    <li>CO</li>
-                    <li>{{vm.data.pollutants.co.units}}</li>
-                    <li>{{vm.data.pollutants.co.concentration}}</li>
-                </ul>
-            </div>
-            <div class="image">
-                <a ui-sref='no2Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
-                <ul id='no2'>
-                    <li>NO2</li>
-                    <li>{{vm.data.pollutants.no2.units}}</li>
-                    <li>{{vm.data.pollutants.no2.concentration}}</li>
-                </ul>
-            </div>
-        </div>
-        <div class='col-md-12 row'>
-            <div class="image" id='aqiImage'>
-                <a ui-sref='aqiInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
-                <ul id='aqi'>
-                    <li>AQI</li>
-                    <li>{{vm.data.breezometer_aqi}}</li>
-                </ul>
+            <div class='col-md-12 row'>
+                <div class="image" id='aqiImage'>
+                    <a ui-sref='aqiInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul id='aqi'>
+                        <li>AQI</li>
+                        <li>{{vm.data.breezometer_aqi}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

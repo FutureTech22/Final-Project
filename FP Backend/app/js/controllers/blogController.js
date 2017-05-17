@@ -28,14 +28,11 @@
                             alert('invalid');
                         }
                     }
-                      vm.getBlogData = function (id) {
-                    data.then(res=> {
-                        let getNewBlog = api.getBlog();
+                     
+                        let getNewBlog = API.getBlog();
                          getNewBlog.then(res => { //getting the data back from the api
                             console.log("Heres your data", res);
                             vm.data = res.data 
                         })
-                    });
-                }
             })
         })();

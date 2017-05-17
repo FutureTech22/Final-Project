@@ -1,13 +1,14 @@
  <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/locations.css">
 <div class='cities'>
-    <div>LA</div>
-    <div>CI</div>
-    <div>NY</div>
-    <div>NJ</div>
+<body ng-controller='pollutantController as vm'>
 </div>
 <div class='container'>
     <main>
+        <ul id='locationsUl'>      
+            <li id='faveLocations' ng-click='vm.saveLocation(data)' ng-repeat="data in vm.locations track by $index"><p>{{data}}</p></li>
+        </ul>
+
         <div class='values'>
             <div class='leftColumn'>
                 <div id='PM2' class='pollutants'>
@@ -52,3 +53,4 @@
         </div>
     </main>
 </div>
+</body>
