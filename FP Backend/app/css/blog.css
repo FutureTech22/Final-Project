@@ -14,3 +14,35 @@
   margin-left: 61%;
   margin-top: 10px;
   margin-bottom: 50px; }
+
+img {
+  width: 400px;
+  display: block;
+  margin-left: 24%;
+  margin-top: 20px; }
+
+textarea {
+  width: 200px;
+  display: block;
+  height: 400px;
+  margin-top: 20px; }
+
+td {
+  display: block; }
+
+td#blogDescription {
+  border-top: 2px solid black;
+  height: 45px; }
+
+td#blogTitle {
+  border-bottom: 2px solid black; }
+
+#blogContainer {
+  margin-top: 25px; }
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0px;
+  border: 2px solid black;
+  margin-bottom: 78px; }

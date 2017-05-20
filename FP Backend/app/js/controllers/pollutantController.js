@@ -8,34 +8,32 @@
 
              vm.setLocation = function() {
 
-                 let locationData = API.getLocation(vm.location);
-
-                 locationData.then(res => {
-                     vm.city = res.data.results;
-
-                     var uluru = {
-                         lat: vm.city['0'].geometry.location.lat,
-                         lng: vm.city['0'].geometry.location.lng
-                     };
-
-                     var map = new google.maps.Map(document.getElementById('map'), {
-                         zoom: 4,
-                         center: uluru
-                     });
-                     var marker = new google.maps.Marker({
-                         position: uluru,
-                         map: map
-                     });
-
-
-                     let pollutionData = API.getData(vm.city['0'].geometry.location.lat, vm.city['0'].geometry.location.lng);
+                let pollutionData = API.getData({city:vm.location});
 
                      pollutionData.then(res => {
-                         vm.data = res.data;
+
+                        vm.city = res.data.location.locationInfo;
+
+                        console.log(vm.city);
+
+                        var uluru = {
+                            lat: vm.city.city[0].geometry.location.lat,
+                            lng: vm.city.city[0].geometry.location.lng
+                         };
+
+                         var map = new google.maps.Map(document.getElementById('map'), {
+                             zoom: 4,
+                             center: uluru
+                         });
+                         var marker = new google.maps.Marker({
+                             position: uluru,
+                             map: map
+                         });
+
+                         vm.data = res.data.data;
                          console.log(vm.data);
                      })
 
-                 });
              };
 
 

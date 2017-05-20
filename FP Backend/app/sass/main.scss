@@ -80,6 +80,27 @@ main.background.ngscope {
      width:100%;
 }
 
+@media only screen and (max-width: 855px) {
+    nav {
+        margin-top: -12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        margin-top: -32px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+
+    h1#title{
+        display:none;
+    }
+}
+
 
 
 

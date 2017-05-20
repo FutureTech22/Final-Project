@@ -1,24 +1,33 @@
 <link rel="stylesheet" type="text/css" href="css/blog.css">
 
 <body ng-controller='blogController as vm'>
+<div class='animated fadeInUp'>
     <div class='container'>
-        <table class="table" ng-class="vm.table">
-            <thead>
-            </thead>
-            <tbody>
-                <tr ng-repeat="data in vm.data">
-                    <td>{{data.title}}</td>
-                    <td>{{data.description}}</td>
-                    <td>{{data.url}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <main>
-            <form name='blogDetails' ng-submit='vm.createBlog(blogDetails.$valid)'>
-               
-                <input type='text' ng-model='vm.blog.title' placeholder='Title' required>
-                <input type='text' ng-model='vm.blog.description' placeholder='Description' required> 
-                <input type="text" ng-model='vm.blog.url' placeholder='url'>
-                <button>Submit</button>
-            </form>
-             <p> {{vm.blog.title}},{{vm.blog.description}} </p>
+        
+        <div class='col-md-3'>    
+                <form name='blogDetails' ng-submit='vm.createBlog(blogDetails.$valid)'>
+                   
+                    <input type='text' ng-model='vm.blog.title' placeholder='Title' required>
+                    <textarea name="" type='text' ng-model='vm.blog.description' placeholder='Description' required></textarea>
+                    <input type="url" ng-model='vm.blog.url' placeholder='url' >
+                    <button>Submit</button>
+                </form>
+                 <p> {{vm.blog.title}},{{vm.blog.description}} </p>
+       </div>
+
+       <div class='col-md-9'>
+           <div id='blogContainer'>
+                <table ng-repeat="data in vm.data" class="table" ng-class="vm.table">
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id='blogTitle'>{{data.title}}</td>
+                            <td id='blogImage'><img ng-src="{{data.url}}"></td>
+                            <td id='blogDescription'>{{data.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

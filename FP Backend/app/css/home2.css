@@ -6,7 +6,7 @@ input {
   width: 100%;
   display: inline; }
 
-img {
+img.locationsDisplay {
   height: 100px; }
 
 #pm25 {

@@ -8,11 +8,8 @@
 
             return {
 
-                getData: (lat, long) => {
-                    let data = {
-                        lat: lat,
-                        long: long
-                    }
+                getData: (data) => {
+ 
                     return $http({
                         method: 'POST',
                         data: data,
@@ -41,13 +38,7 @@
 
                     })
                 },
-                getLocation: (city) => {
-                    return $http({
-                        method: 'GET',
-                        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyCTuDSmrBrHXYIeGiDx_wNp7TbB7wL8GH8`,
 
-                    })
-                },
                 saveLocation: (data) => {
                     return $http({
                         method:'POST',
@@ -61,7 +52,16 @@
                         data:id,
                         url: 'http://localhost:8080/user'
                     })
-                }
+                },
+                deleteData: (id) => {
+                    return $http({
+                        method: 'DELETE',
+                        data:id,
+                        url: `http://localhost:8080/addLocation/${id}`,
+
+                    })
+                },
+
             }
         })
 })();

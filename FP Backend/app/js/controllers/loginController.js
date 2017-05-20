@@ -6,7 +6,13 @@
 
             const vm = this;
 
-     
+     		if (!$auth.isAuthenticated()) {
+                state.go('home')
+            } else {
+                let user = $auth.getPayload();
+
+            }
+            let user = $auth.getPayload();
             
 
             vm.authenticate = function(provider) {

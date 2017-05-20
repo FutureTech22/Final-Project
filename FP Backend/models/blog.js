@@ -15,7 +15,7 @@ var blogSchema = new mongoose.Schema({
      type: String,
  },
 
- URL: {
+ url: {
      required: false,
      type: String,
  }

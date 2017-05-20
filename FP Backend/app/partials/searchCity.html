@@ -3,19 +3,20 @@
 <div class='container animated fadeInUpBig'>
     <div class='col-md-6'>
         <form>
-        <!-- when you enter location make that input value go to the button then add vm.data.pollutants in the display after the button is clicked(also have it route to the  my locations -->
+            <!-- when you enter location make that input value go to the button then add vm.data.pollutants in the display after the button is clicked(also have it route to the  my locations -->
+
             <input id='mapLocation' placeholder='Enter Location' ng-model="vm.location">
+
             <button ng-click="vm.setLocation()" id='mapLocationSubmit'>Submit</button>
         </form>
-
         <button ui-sref='locations' ng-click="vm.saveLocation()" id='saveThisLocation'>Save This Location</button>
-<!-- make the save location button a form? -->
-      
-    
-       <div class='pollutantsValues'>
+        <!-- make the save location button a form? -->
+
+
+        <div class='pollutantsValues'>
             <div class='col-md-6'>
                 <div class="image">
-                    <a ui-sref='pm25Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <a ui-sref='pm25Info'><img class='locationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
                     <ul id='pm25'>
                         <li>PM2.5</li>
                         <li>{{vm.data.pollutants.pm25.units}}</li>
@@ -23,7 +24,7 @@
                     </ul>
                 </div>
                 <div class="image">
-                    <a ui-sref='pm10Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <a ui-sref='pm10Info'><img class='locationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
                     <ul id='pm10'>
                         <li>PM10</li>
                         <li>{{vm.data.pollutants.pm10.units}}</li>
@@ -33,7 +34,7 @@
             </div>
             <div class='col-md-6'>
                 <div class="image">
-                    <a ui-sref='coInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <a ui-sref='coInfo'><img class='locationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
                     <ul id='co'>
                         <li>CO</li>
                         <li>{{vm.data.pollutants.co.units}}</li>
@@ -41,7 +42,7 @@
                     </ul>
                 </div>
                 <div class="image">
-                    <a ui-sref='no2Info'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <a ui-sref='no2Info'><img class='locationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
                     <ul id='no2'>
                         <li>NO2</li>
                         <li>{{vm.data.pollutants.no2.units}}</li>
@@ -51,7 +52,7 @@
             </div>
             <div class='col-md-12 row'>
                 <div class="image" id='aqiImage'>
-                    <a ui-sref='aqiInfo'><img src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <a ui-sref='aqiInfo'><img class='locationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
                     <ul id='aqi'>
                         <li>AQI</li>
                         <li>{{vm.data.breezometer_aqi}}</li>

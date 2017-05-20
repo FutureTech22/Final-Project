@@ -18,17 +18,17 @@
                 oauthType: '2.0',
                 popupOptions: { width: 580, height: 400 }
             });
-            $stateProvider
-                .state('home', {
-                    url: '/',
-                    views: {
-                        'content': {
-                            templateUrl: '../partials/home.html',
+           // $stateProvider
+             //   .state('home', {
+               //     url: '/',
+                 //   views: {
+                   //     'content': {
+                     //       templateUrl: '../partials/home.html',
                            
 
-                        },
-                    }
-                })
+                       // },
+                   // }
+               // })
             $stateProvider
                 .state('searchCity', {
                     url: '/searchCity',
@@ -65,7 +65,7 @@
                 })
             $stateProvider
                 .state('userLogin', {
-                    url: '/userLogin',
+                    url: '/',
                     views: {
                         'content': {
                             templateUrl: '../partials/userLogin.html',

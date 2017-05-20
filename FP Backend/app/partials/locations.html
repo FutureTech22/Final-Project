@@ -1,56 +1,60 @@
- <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/locations.css">
-<div class='cities'>
-<body ng-controller='pollutantController as vm'>
-</div>
-<div class='container'>
-    <main>
-        <ul id='locationsUl'>      
-            <li id='faveLocations' ng-click='vm.saveLocation(data)' ng-repeat="data in vm.locations track by $index"><p>{{data}}</p></li>
-        </ul>
-
-        <div class='values'>
-            <div class='leftColumn'>
-                <div id='PM2' class='pollutants'>
-                    <ul>
+<link rel="stylesheet" type="text/css" href="css/searchCity.css">
+<link rel="stylesheet" type="text/css" href="css/home2.css">
+<div class='animated fadeInUpBig'>
+    <div class='container'>
+        <main>
+            <div class="image" id='aqiImage'>
+                <a ui-sref='aqiInfo'><img class='myLocationsAqi' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                <ul class='locations' id='aqi'>
+                    <li>AQI</li>
+                    <li>{{vm.data.breezometer_aqi}}</li>
+                </ul>
+            </div>
+            <li id='faveLocations' ng-model='vm.location'  ng-repeat="data in vm.locations track by $index">
+                <img ng-click='vm.setLocation(data)' class='myLocationsSkyline' src="https://img.clipartfest.com/2dc2887befcf7fdf912ecb850a2716b8_showing-post-media-for-city-skyline-cartoon-wwwcartoonsmixcom-city-skyline-cartoon_3300-2100.jpeg">
+                <div id='myValuesBorder'>
+                    <p class='myPollutantValues' ng-click='vm.setLocation(data)'>{{data}}</p>
+                </div>
+                <button ng-click='vm.setLocation(data)' class='getPollutantsValue'>Get Pollutants</button>
+               <!--  <button ng-click="vm.delete(data._id)" class='delete'>X</button> -->
+            </li>
+           
+            <div class='pollutantsValues'>
+                <div class="image">
+                    <a ui-sref='pm25Info'><img class='myLocationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul class='locations' id='pm25'>
                         <li>PM2.5</li>
                         <li>{{vm.data.pollutants.pm25.units}}</li>
                         <li>{{vm.data.pollutants.pm25.concentration}}</li>
                     </ul>
                 </div>
-                <div id='PM10' class='pollutants'>
-                    <ul>
+                <div class="image">
+                    <a ui-sref='pm10Info'><img class='myLocationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul class='locations' id='pm10'>
                         <li>PM10</li>
                         <li>{{vm.data.pollutants.pm10.units}}</li>
                         <li>{{vm.data.pollutants.pm10.concentration}}</li>
                     </ul>
                 </div>
-            </div>
-            <div class='rightColumn'>
-                <div id='NO2' class='pollutants'>
-                    <ul>
+                <div class="image">
+                    <a ui-sref='coInfo'><img class='myLocationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul class='locations' id='co'>
+                        <li>CO</li>
+                        <li>{{vm.data.pollutants.co.units}}</li>
+                        <li>{{vm.data.pollutants.co.concentration}}</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <a ui-sref='no2Info'><img class='myLocationsDisplay' src="https://img.clipartfest.com/ca5ebda295eb5a8d8288d877e571787a_cloud-clip-art-clouds-clipart-transparent-background_296-156.png"></a>
+                    <ul class='locations' id='no2'>
                         <li>NO2</li>
                         <li>{{vm.data.pollutants.no2.units}}</li>
                         <li>{{vm.data.pollutants.no2.concentration}}</li>
                     </ul>
                 </div>
-                <div id='CO2' class='pollutants'>
-                    <ul>
-                        <li>C0</li>
-                        <li>{{vm.data.pollutants.co.units}}</li>
-                        <li>{{vm.data.pollutants.co.concentration}}</li>
-                    </ul>
-                </div>
             </div>
-            <div class='overall'>
-                <div id='GHG' class='pollutants'>
-                    <ul>
-                        <li>AQI</li>
-                        <li>{{vm.data.breezometer_aqi}}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    </div>
     </main>
 </div>
-</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

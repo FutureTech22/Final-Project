@@ -83,6 +83,21 @@ app.get('/users/:id',function(req,res){
   res.json(single);
 }),
 
+// Delete a location
+app.delete('/addLocation/:id',function(req,res){
+  let id = req.params.id;
+
+  Location.remove({_id:id},(err) => {
+    if(err) res.json(err);
+    console.log("INSIDE")
+
+    Location.find().exec((err,response)=>{
+        if(err) res.json({err});
+        res.json(response);
+      });
+
+  });
+})
 
 //updating locations
 app.post('/addLocation', function(req,res){

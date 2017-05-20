@@ -5,29 +5,55 @@
     width: 38%;
 }
 
+p.myPollutantValues{
+   
+     font-family: 'Indie Flower', cursive;
+     display:inline;
+}
 
-
-.leftColumn {
-	display:inline-block;
-	margin-top: 30px;
+#myValuesBorder{
+    
+    margin-left: 35%;
+    display:inline-block;
+    padding-right: 5px;
+    width:120px;
 
 }
 
-.rightColumn{
-	display:inline-block;
+button.getPollutantsValue{
+    font-family: 'Indie Flower', cursive;
 }
 
-.pollutants {
-    border: 2px solid black;
-    height: 100px;
-    width: 200px;
-    margin: 10px;
-    border-radius: 8%;
+img.myLocationsSkyline {
+    height: 50px;
+    margin-left: 38%;
+    margin-bottom: 5px;
+    border-radius: 10%;
+    display:block;
+}
+
+img.myLocationsDisplay {
+    height: 120px;
+    margin-left: 50px;
+    
+}
+
+img.myLocationsAqi {
+    height: 120px;
+    margin-left: 50px;
+    margin-top: 25px;
+    
+}
+
+ul.locations{
+    font-family: 'Barrio', cursive;
+}
+
     li {
         list-style-type: none;
-        display: block;
+              
     }
-}
+
 .overall{
 	display:inline-block;
 	vertical-align: top;
@@ -48,7 +74,7 @@
         margin-bottom: 10px;
         margin-top: 25px;
         text-align: center;
-         border-radius: 8%;
+        border-radius: 8%;
     }
 }
 
@@ -62,16 +88,64 @@
 
 
 li#faveLocations{
-     border: 2px solid lightseagreen;
-    height: 100px;
-    width: 25%;
-    margin: 40px;
-    margin-left: 25%;
-    border-radius: 8%;
     list-style-type: none;
+    
+
 
 }
 
-li p {
-    margin-left: 10%;
+
+#pm25.locations{
+    position: absolute;
+    bottom: -30px;
+    left: 107px;
+    li{
+        
+        list-style-type: none;
+
+    }
+}
+
+#pm10.locations{
+    position: absolute;
+    bottom: -30px;
+    left: 107px;
+    li{
+        
+        list-style-type: none;
+
+    }
+}
+
+#co.locations{
+    position: absolute;
+    bottom: -30px;
+    left: 107px;
+    li{
+        
+        list-style-type: none;
+
+    }
+}
+
+#no2.locations{
+    position: absolute;
+    bottom: -30px;
+    left: 107px;
+    li{
+        
+        list-style-type: none;
+
+    }
+}
+
+#aqi.locations{
+    position: absolute;
+    bottom: -30px;
+    left: 107px;
+    li{
+        
+        list-style-type: none;
+
+    }
 }

@@ -1,11 +1,15 @@
 <link rel="stylesheet" href="css/userLogin.css">
+<link rel="stylesheet" href="css/home.css">
+<div class='container animated fadeInUpBig'>
 <main>
 
+
+<h1 id='poweredBy'>Air Quality App</h1>
+<h2>Powered By Breezometer®</h2>
+
     <form name='userDetails'>
-        <button ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
+        <button ng-click="vm.authenticate('facebook')"  ui-sref='searchCity'>Sign in with Facebook</button>
     </form>
 
-    
-
 </main>
-
+</div>
