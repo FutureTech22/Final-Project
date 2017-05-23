@@ -1,0 +1,106 @@
+button.delete {
+    display: inline;
+}
+
+input {
+    display: block;
+    margin-top: 50px;
+}
+
+header {
+   
+    border-bottom: 2px solid lightseagreen;
+    height: 75px;
+    #title{
+        background: white;
+        border-radius: 3%;
+        padding: 3px;
+        margin-left: 15px;
+    }
+}
+
+h1 {
+    margin: 0px auto;
+    font-family: 'Barrio', cursive;
+}
+
+footer{
+    background: black;
+    height: 75px;
+}
+
+
+
+#submitLocation {
+    display: inline;
+}
+
+nav {
+    display: inline-block;
+    padding-top: 34px;
+    font-size: 18px;
+    
+    ul {
+        display: inline;
+        font-family: 'Indie Flower', cursive;
+        li {
+            display: inline;
+            background: white;
+            margin-right: 5px;
+            padding-left: 3px;
+            padding-right: 3px;
+            padding-bottom: 1px;
+            padding-top: 1px;
+            border-radius: 5%;
+           
+            a.links {
+            	color:black;
+                text-decoration: none;
+             
+            }
+        }
+    }
+}
+
+header {
+
+    #title {
+        display: inline;
+        margin-top: 10px;
+
+    }
+}
+
+main.background.ngscope {
+     background-image: url('http://nocamels.com/wp-content/uploads/2016/12/breezometer-logo.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 1000px;
+     width:100%;
+}
+
+@media only screen and (max-width: 855px) {
+    nav {
+        margin-top: -12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        margin-top: -32px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+
+    h1#title{
+        display:none;
+    }
+}
+
+
+
+
