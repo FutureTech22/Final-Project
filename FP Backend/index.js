@@ -17,6 +17,7 @@ app.use(express.static('app'))
 app.use(express.static('public'));
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
 
 
 app.all('*', function(req, res, next) {
@@ -29,7 +30,6 @@ app.all('*', function(req, res, next) {
 app.get('/home',(req,res)=>{
 	res.sendFile(path.resolve(__dirname,'./app/index.html'));
 });
-
 
 
 // Get all the blogs
